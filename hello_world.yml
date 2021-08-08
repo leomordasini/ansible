@@ -1,5 +1,6 @@
 ---
 - name: This is a hello-world example
+  remote_user: ubuntu
   hosts: localhost
   tasks:
     - name: Create a temp file with the content 'hello world'.
