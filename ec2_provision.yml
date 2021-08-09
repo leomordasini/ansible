@@ -1,5 +1,4 @@
 ---
-- name: Ansible test
   hosts: localhost
   roles:
-    - { role: ec2_provision }
+    ec2_provision
