@@ -1,0 +1,11 @@
+tasks:
+  - name: launching AWS instance using Ansible
+    ec2:
+      key_name: aws_instance_ansible
+      instance_type: t2.micro
+      image: ami-0c2b8ca1dad447f8a
+      region: us-east-1
+      wait: yes
+      count: 1
+      vpc_subnet_id: subnet-ef19dfa7
+      assign_public_ip: yes
