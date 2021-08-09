@@ -9,7 +9,6 @@
       image: ami-0c2b8ca1dad447f8a
       region: us-east-1
       wait: yes
-      group: Ansible
       count: 1
       vpc_subnet_id: subnet-ef19dfa7
       assign_public_ip: yes
