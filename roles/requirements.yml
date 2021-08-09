@@ -1,2 +1,4 @@
 - src: https://github.com/leomordasini/ansible/tree/main/roles/ec2_provision
+  scm: git
+  version: master
   name: ec2_provision
