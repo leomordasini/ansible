@@ -1,6 +1,6 @@
 ---
 - name: Play to create EC2 resources
-  hosts: all
+  hosts:  localhost
 
   tasks:
   - name: provision EC2 instance on AWS
@@ -24,7 +24,7 @@
       groups: web_servers
     
 - name: Play to install and start Apache Server
-  hosts: all
+  hosts: web_servers
 
   tasks:
   - name: install apache 
