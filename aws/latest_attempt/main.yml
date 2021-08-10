@@ -1,0 +1,20 @@
+---
+- name: Play to create EC2 resources
+  hosts: localhost
+
+  tasks:
+  - name: provision EC2 instance on AWS
+    ec2:
+      key_name: aws_instance_ansible
+      instance_type: t2.micro
+      image: ami-0c2b8ca1dad447f8a
+      region: us-east-1
+      wait: yes
+      count: 1
+      assign_public_ip: yes
+      vpc_subnet_id: subnet-ef19dfa7
+      group_id: sg-07e209902dc94c538
+      instance_tags:
+        Name: "webserver"
+      register: ec2
+      
