@@ -1,7 +1,5 @@
 ---
 - name: Play to create EC2 resources
-  hosts: demo_inventory
-
   tasks:
   - name: provision EC2 instance on AWS
     ec2:
@@ -24,8 +22,6 @@
       groups: web_servers
     
 - name: Play to install and start Apache Server
-  hosts: web_servers
-  
   tasks:
   - name: install apache 
     yum :
@@ -37,5 +33,3 @@
       name: httpd 
       state: started 
       enabled: yes
-      
-      
