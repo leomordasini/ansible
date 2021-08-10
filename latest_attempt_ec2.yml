@@ -1,5 +1,7 @@
 ---
 - name: Play to create EC2 resources
+  hosts: all
+
   tasks:
   - name: provision EC2 instance on AWS
     ec2:
@@ -22,6 +24,8 @@
       groups: web_servers
     
 - name: Play to install and start Apache Server
+  hosts: all
+
   tasks:
   - name: install apache 
     yum :
