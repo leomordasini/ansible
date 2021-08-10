@@ -16,5 +16,5 @@
       group_id: sg-07e209902dc94c538
       instance_tags:
         Name: "webserver"
-      register: ec2
+    register: ec2
       
