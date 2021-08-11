@@ -14,13 +14,13 @@
       description: "Sec group for app {{ id }}"
       region: "{{ region }}"
       rules:
+      vpc_id: vpc-96c4f0f0
         - proto: tcp
           ports:
             - 22
           cidr_ip: 0.0.0.0/0
           rule_desc: allow all on ssh port
     register: result_sec_group
-
 
   - name: provision EC2 instance on AWS
     ec2:
