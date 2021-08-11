@@ -1,6 +1,6 @@
 ---
 - name: Play to install and start Apache Server
-  hosts: web_servers
+  hosts: all
 
   tasks:
   - name: install apache 
