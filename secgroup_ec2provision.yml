@@ -6,14 +6,12 @@
     id: "web-app"
     sec_group: "{{ id }}-sec"
     region: "us-east-1"
-    vpc_id: vpc-96c4f0f0
 
   tasks:
   - name: Create security group
     ec2_group:
       name: "{{ sec_group }}"
       description: "Sec group for app {{ id }}"
-      vpc_id: "{{ vpc-id }}"
       region: "{{ region }}"
       rules:
         - proto: tcp
@@ -33,7 +31,6 @@
       region: "{{ region }}"
       wait: yes
       count: 1
-      assign_public_ip: yes
       group_id: "{{ result_sec_group.group_id }}"
       instance_tags:
         Name: "webserver"
