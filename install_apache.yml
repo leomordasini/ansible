@@ -1,6 +1,7 @@
 ---
 - name: Play to install and start Apache Server
   hosts: all
+  remote_user: ubuntu
 
   tasks:
   - name: install apache 
