@@ -1,0 +1,40 @@
+---
+- name: Play to create EC2 resources
+  hosts:  localhost
+
+  vars:
+    id: "web-app"
+    sec_group: "{{ id }}-sec"
+    region: "us-east-1"
+
+  tasks:
+  - name: Create security group
+      ec2_group:
+        name: "{{ sec_group }}"
+        description: "Sec group for app {{ id }}"
+        # vpc_id: 12345
+        region: "{{ region }}"
+        rules:
+          - proto: tcp
+            ports:
+              - 22
+            cidr_ip: 0.0.0.0/0
+            rule_desc: allow all on ssh port
+        register: result_sec_group
+
+
+  - name: provision EC2 instance on AWS
+    ec2:
+      key_name: datadog
+      id: "{{ id }}"
+      instance_type: t2.micro
+      image: ami-0c2b8ca1dad447f8a
+      region: "{{ region }}"
+      wait: yes
+      count: 1
+      assign_public_ip: yes
+      group_id: "{{ result_sec_group.group_id }}"
+      instance_tags:
+        Name: "webserver"
+    register: ec2
+
