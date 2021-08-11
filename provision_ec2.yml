@@ -6,7 +6,7 @@
   tasks:
   - name: provision EC2 instance on AWS
     ec2:
-      key_name: aws_instance_ansible
+      key_name: datadog
       instance_type: t2.micro
       image: ami-0c2b8ca1dad447f8a
       region: us-east-1
