@@ -13,8 +13,8 @@
       name: "{{ sec_group }}"
       description: "Sec group for app {{ id }}"
       region: "{{ region }}"
-      rules:
       vpc_id: vpc-96c4f0f0
+      rules:      
         - proto: tcp
           ports:
             - 22
