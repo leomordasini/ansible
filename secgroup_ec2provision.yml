@@ -20,7 +20,7 @@
             - 22
           cidr_ip: 0.0.0.0/0
           rule_desc: allow all on ssh port
-      register: result_sec_group
+    register: result_sec_group
 
 
   - name: provision EC2 instance on AWS
