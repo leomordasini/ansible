@@ -2,6 +2,7 @@
 - name: Play to install and start Apache Server
   hosts: all
   remote_user: ec2-user
+  become: yes
 
   tasks:
   - name: install apache 
