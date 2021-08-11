@@ -1,6 +1,7 @@
 ---
 - name: Play to create EC2 resources
   hosts:  localhost
+  remote_user: ec2-user
 
   tasks:
   - name: provision EC2 instance on AWS
