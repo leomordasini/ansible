@@ -1,0 +1,15 @@
+---
+- name: Play to install and start Apache Server
+  hosts: web_servers
+
+  tasks:
+  - name: install apache 
+    yum :
+      name: httpd 
+      state: present
+
+  - name: start apache
+    service: 
+      name: httpd 
+      state: started 
+      enabled: yes

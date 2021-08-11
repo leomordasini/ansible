@@ -1,5 +1,4 @@
-tasks:
-  - name: launching AWS instance using Ansible
+  - name: launching EC2 instance
     ec2:
       key_name: aws_instance_ansible
       instance_type: t2.micro
