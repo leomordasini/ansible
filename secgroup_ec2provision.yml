@@ -9,18 +9,18 @@
 
   tasks:
   - name: Create security group
-      ec2_group:
-        name: "{{ sec_group }}"
-        description: "Sec group for app {{ id }}"
-        # vpc_id: 12345
-        region: "{{ region }}"
-        rules:
-          - proto: tcp
-            ports:
-              - 22
-            cidr_ip: 0.0.0.0/0
-            rule_desc: allow all on ssh port
-        register: result_sec_group
+    ec2_group:
+      name: "{{ sec_group }}"
+      description: "Sec group for app {{ id }}"
+      # vpc_id: 12345
+      region: "{{ region }}"
+      rules:
+        - proto: tcp
+          ports:
+            - 22
+          cidr_ip: 0.0.0.0/0
+          rule_desc: allow all on ssh port
+      register: result_sec_group
 
 
   - name: provision EC2 instance on AWS
