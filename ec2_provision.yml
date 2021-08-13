@@ -5,12 +5,9 @@
   vars:
     id: "web-app"
     region: "us-east-1"
-    # RESULT_SEC_GROUP2: "{{ hostvars['localhost']['RESULT_SEC_GROUP'] }}"
+    test: "{{ hostvars['localhost']['result_sec_group'] }}"
 
   tasks:
-  - set_fact:
-      test: "{{ RESULT_SEC_GROUP.stdout }}"
-  
   - name: print out imported variable
     debug:
       var: test
@@ -25,7 +22,7 @@
       vpc_subnet_id: subnet-ef19dfa7
       wait: yes
       count: 1
-      group_id: "{{ RESULT_SEC_GROUP2.group_id }}"
+      group_id: "{{ test.group_id }}"
       instance_tags:
         Name: "mywebserver"
     register: ec2
