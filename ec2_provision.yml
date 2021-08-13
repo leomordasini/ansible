@@ -5,6 +5,7 @@
   vars:
     id: "web-app"
     region: "us-east-1"
+    hostvars['localhost']['result_sec_grou']
 
   tasks:
   - name: provision EC2 instance
