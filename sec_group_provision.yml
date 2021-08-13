@@ -22,6 +22,6 @@
           rule_desc: allow all on ssh port
     register: RESULT_SEC_GROUP
    
-   - name: Print out result
+  - name: Print out result
     debug: 
       var: RESULT_SEC_GROUP
