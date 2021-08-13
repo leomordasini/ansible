@@ -12,7 +12,7 @@
       id: "{{ id }}"
       instance_type: t2.micro
       image: ami-0c2b8ca1dad447f8a
-      region: "{{ region }}"
+      region: "{{ result_sec_group.region }}"
       vpc_subnet_id: subnet-ef19dfa7
       wait: yes
       count: 1
