@@ -8,6 +8,10 @@
     RESULT_SEC_GROUP2: hostvars['localhost']['RESULT_SEC_GROUP'] 
 
   tasks:
+  - name: print out imported variable
+    debug:
+      var: RESULT_SEC_GROUP2
+  
   - name: provision EC2 instance
     ec2:
       key_name: datadog
