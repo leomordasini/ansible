@@ -5,12 +5,12 @@
   vars:
     id: "web-app"
     region: "us-east-1"
-    test: "{{ hostvars['localhost']['result_sec_group'] }}"
+    group_id: "{{ hostvars['localhost']['result_sec_group']['group_id'] }}"
 
   tasks:
   - name: print out imported variable
     debug:
-      var: test
+      var: group_id
   
   - name: provision EC2 instance
     ec2:
@@ -22,7 +22,7 @@
       vpc_subnet_id: subnet-ef19dfa7
       wait: yes
       count: 1
-      group_id: "{{ test.group_id }}"
+      group_id: "{{ group_id }}"
       instance_tags:
         Name: "mywebserver"
     register: ec2
