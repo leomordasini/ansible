@@ -1,6 +1,6 @@
 ---
 - name: Create Security Group in AWS
-  hosts:  localhost
+  hosts: localhost
 
   vars:
     id: "web-app"
