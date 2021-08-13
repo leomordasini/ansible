@@ -7,10 +7,9 @@
     region: "us-east-1"
     
   tasks:
-  - name: import vars from result_sec_group.json
-    include_vars:
-      file: /var/tmp/result_sec_group.json
-      name: result_sec_group
+  - name: import register from previous playbook
+    shell: cat "{{ result_sec_group.stdout }}" | tail -1
+    register: result_sec_group
 
   - name: provision EC2 instance
     ec2:

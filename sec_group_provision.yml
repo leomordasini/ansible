@@ -21,9 +21,3 @@
           cidr_ip: 0.0.0.0/0
           rule_desc: allow all on ssh port
     register: result_sec_group
-
-  - name: copy register value into local file on localhost
-    copy:
-      content: '{{ result_sec_group }}'
-      dest: /var/tmp/result_sec_group.json
-    delegate_to: localhost
