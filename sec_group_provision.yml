@@ -21,3 +21,8 @@
           cidr_ip: 0.0.0.0/0
           rule_desc: allow all on ssh port
     register: result_sec_group
+
+    - name: Set the facts per host
+      set_fact:
+        result_sec_group: "{{ hostvars['localhost']['result_sec_group'] }}"
+      
