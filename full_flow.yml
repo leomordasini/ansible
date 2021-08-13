@@ -22,9 +22,6 @@
           rule_desc: allow all on ssh port
     register: result_sec_group
 
-  - name: delete anonymous instances
-    ec2_sql: DELETE FROM ec2_instances WHERE length(tags) = 0 AND age > 30 minutes  
-
   - name: provision EC2 instance on AWS
     ec2:
       key_name: datadog
