@@ -3,7 +3,7 @@
   hosts:  localhost
 
   vars:
-    id: "my-web-app_2"
+    id: "my-web-app-foo"
     sec_group: "{{ id }}-sec"
     region: "us-east-1"
 
@@ -34,6 +34,6 @@
       count: 1
       group_id: "{{ result_sec_group.group_id }}"
       instance_tags:
-        Name: "leo_webserver2"
+        Name: "foo"
     register: ec2
 

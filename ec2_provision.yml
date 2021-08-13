@@ -8,10 +8,6 @@
     group_id: "{{ hostvars['localhost']['result_sec_group']['group_id'] }}"
 
   tasks:
-  - name: print out imported variable
-    debug:
-      var: group_id
-  
   - name: provision EC2 instance
     ec2:
       key_name: datadog

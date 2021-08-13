@@ -3,7 +3,7 @@
   hosts: localhost
 
   vars:
-    id: "web-app-1"
+    id: "web-app-foo"
     sec_group: "{{ id }}-sec"
     region: "us-east-1"
 
@@ -21,7 +21,3 @@
           cidr_ip: 0.0.0.0/0
           rule_desc: allow all on ssh port
     register: result_sec_group
-   
-  - name: Print out result
-    debug: 
-      var: result_sec_group
