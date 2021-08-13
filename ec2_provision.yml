@@ -8,8 +8,7 @@
     
   tasks:
   - name: import register from previous playbook
-    shell: cat "{{ RESULT_SEC_GROUP.stdout }}" | tail -1
-    register: RESULT_SEC_GROUP2
+    RESULT_SEC_GROUP2: hostvars['localhost']['RESULT_SEC_GROUP'] 
 
   - name: provision EC2 instance
     ec2:
