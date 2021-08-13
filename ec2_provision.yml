@@ -5,11 +5,11 @@
   vars:
     id: "web-app"
     region: "us-east-1"
-    RESULT_SEC_GROUP2: "{{ hostvars['localhost']['RESULT_SEC_GROUP'] }}"
+    # RESULT_SEC_GROUP2: "{{ hostvars['localhost']['RESULT_SEC_GROUP'] }}"
 
   tasks:
   - set_fact:
-      test: "{{ RESULT_SEC_GROUP2.stdout }}"
+      test: "{{ RESULT_SEC_GROUP.stdout }}"
   
   - name: print out imported variable
     debug:
