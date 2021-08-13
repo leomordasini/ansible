@@ -8,8 +8,8 @@
     
   tasks:
   - name: import register from previous playbook
-    shell: cat "{{ result_sec_group.stdout }}" | tail -1
-    register: result_sec_group
+    shell: cat "{{ RESULT_SEC_GROUP.stdout }}" | tail -1
+    register: RESULT_SEC_GROUP2
 
   - name: provision EC2 instance
     ec2:
@@ -21,7 +21,7 @@
       vpc_subnet_id: subnet-ef19dfa7
       wait: yes
       count: 1
-      group_id: "{{ result_sec_group.group_id }}"
+      group_id: "{{ RESULT_SEC_GROUP2.group_id }}"
       instance_tags:
         Name: "mywebserver"
     register: ec2
