@@ -23,5 +23,5 @@
     register: RESULT_SEC_GROUP
    
    - name: Print out result
-      debug: 
-        var: RESULT_SEC_GROUP
+    debug: 
+      var: RESULT_SEC_GROUP
