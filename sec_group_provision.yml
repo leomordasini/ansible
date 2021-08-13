@@ -3,7 +3,7 @@
   hosts: localhost
 
   vars:
-    id: "web-app"
+    id: "web-app-1"
     sec_group: "{{ id }}-sec"
     region: "us-east-1"
 
