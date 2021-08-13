@@ -1,0 +1,22 @@
+--- 
+- name: provision EC2 instance on AWS
+  hosts: localhost
+
+  vars:
+  id: "web-app"
+
+  tasks:
+  - name: provision EC2 instance on AWS
+    ec2:
+      key_name: datadog
+      id: "{{ id }}"
+      instance_type: t2.micro
+      image: ami-0c2b8ca1dad447f8a
+      region: "{{ region }}"
+      vpc_subnet_id: subnet-ef19dfa7
+      wait: yes
+      count: 1
+      group_id: "{{ result_sec_group.group_id }}"
+      instance_tags:
+        Name: "webserver"
+    register: ec2

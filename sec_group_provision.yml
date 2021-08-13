@@ -1,0 +1,23 @@
+---
+- name: Create Security Group in AWS
+  hosts:  localhost
+
+  vars:
+    id: "web-app"
+    sec_group: "{{ id }}-sec"
+    region: "us-east-1"
+
+  tasks:
+  - name: Create security group
+    ec2_group:
+      name: "{{ sec_group }}"
+      description: "Sec group for app {{ id }}"
+      region: "{{ region }}"
+      vpc_id: vpc-96c4f0f0
+      rules:      
+        - proto: tcp
+          ports:
+            - 22
+          cidr_ip: 0.0.0.0/0
+          rule_desc: allow all on ssh port
+    register: result_sec_group
