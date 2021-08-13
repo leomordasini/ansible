@@ -3,7 +3,7 @@
   hosts: localhost
 
   vars:
-  id: "web-app"
+    id: "web-app"
 
   tasks:
   - name: provision EC2 instance
