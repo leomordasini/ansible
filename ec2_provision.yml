@@ -5,11 +5,9 @@
   vars:
     id: "web-app"
     region: "us-east-1"
-    
-  tasks:
-  - name: import register from previous playbook
     RESULT_SEC_GROUP2: hostvars['localhost']['RESULT_SEC_GROUP'] 
 
+  tasks:
   - name: provision EC2 instance
     ec2:
       key_name: datadog
