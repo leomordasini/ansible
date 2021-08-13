@@ -7,11 +7,10 @@
     region: "us-east-1"
     
   tasks:
-  - name: Set the facts per host
-    set_stats:
-      result_sec_group: "{{ hostvars['localhost']['result_sec_group'] }}"
-
+  
   - name: provision EC2 instance
+    var: 
+      result_sec_group: "{{ hostvars['localhost']['result_sec_group'] }}"
     ec2:
       key_name: datadog
       id: "{{ id }}"
