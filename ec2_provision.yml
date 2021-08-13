@@ -9,7 +9,7 @@
 
   tasks:
   - set_fact:
-      test: {{ RESULT_SEC_GROUP.stdout }}
+      test: "{{ RESULT_SEC_GROUP2.stdout }}"
   
   - name: print out imported variable
     debug:
