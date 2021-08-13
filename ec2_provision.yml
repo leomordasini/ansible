@@ -13,8 +13,6 @@
       name: result_sec_group
 
   - name: provision EC2 instance
-    var: 
-      result_sec_group: "{{ hostvars['localhost']['result_sec_group'] }}"
     ec2:
       key_name: datadog
       id: "{{ id }}"
