@@ -21,6 +21,3 @@
           cidr_ip: 0.0.0.0/0
           rule_desc: allow all on ssh port
     register: RESULT_SEC_GROUP
-
-  - debug: 
-    var: RESULT_SEC_GROUP
