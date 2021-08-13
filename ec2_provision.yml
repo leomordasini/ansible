@@ -6,7 +6,7 @@
   id: "web-app"
 
   tasks:
-  - name: provision EC2 instance on AWS
+  - name: provision EC2 instance
     ec2:
       key_name: datadog
       id: "{{ id }}"
