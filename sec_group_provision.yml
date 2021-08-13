@@ -25,4 +25,5 @@
   - name: make vars persistent
     set_fact:
       result_sec_group: "{{result_sec_group}}"
+    debug: var=result_sec_group
     
