@@ -25,5 +25,5 @@
   - name: copy register value into local file on localhost
     copy:
       content: '{{ result_sec_group }}'
-      dest: result_sec_group.json
+      dest: /var/tmp/result_sec_group.json
     delegate_to: localhost
