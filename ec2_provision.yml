@@ -7,7 +7,11 @@
     region: "us-east-1"
     
   tasks:
-  
+  - name: import vars from result_sec_group.json
+    include_vars:
+      file: result_sec_group.json
+      name: result_sec_group
+
   - name: provision EC2 instance
     var: 
       result_sec_group: "{{ hostvars['localhost']['result_sec_group'] }}"
